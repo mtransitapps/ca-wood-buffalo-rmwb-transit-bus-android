@@ -4,7 +4,8 @@
     "route_id_not_unique_allowed": true,
     "route_id_not_unique_allowed_comment": "allow merge",
     "use_route_short_name_for_route_id": true,
-    "route_short_name_cleaners": [
+    "route_short_name_cleaners_from_stop_name_comment": "Can't use route short name because wrong in data id:402_FMAM->sn:401AM (!)",
+    "route_short_name_cleaners_from_stop_name": [
         {
             "regex": "^Rte ",
             "ignore_case": true,
@@ -16,12 +17,20 @@
             "comment": "Remove 'AM' or 'PM' suffix from route short name"
         }
     ],
+    "route_short_name_cleaners": [
+        {
+            "regex": "^Route\\s*|_(\\w{2})(AM|am|PM|pm)$|PM_EM$|AM$",
+            "comment": "clean route short from route ID (id:402_FMAM->sn:401AM (!))"
+        }
+    ],
     "route_short_name_to_route_id_configs": [
         {
             "route_short_name": "302_3",
             "route_id": 302003
         }
     ],
+    "use_route_id_for_route_short_name": true,
+    "use_route_id_for_route_short_name_comment": "Used because of wrong route short name in data id:402_FMAM->sn:401AM (!).",
     "default_route_long_name_enabled": true,
     "route_long_name_cleaners": [
         {

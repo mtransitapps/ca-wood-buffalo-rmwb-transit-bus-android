@@ -51,6 +51,70 @@
             "comment": "add missing space around @",
             "regex": "\\s*@\\s*",
             "replacement": " @ "
+        },
+        {
+            "comment": "Remove ends with Terminal-number from trip headsign",
+            "regex": " Terminal-\\d+$",
+            "ignore_case": true,
+            "replacement": " Terminal"
+        },
+        {
+            "comment": "Remove '<Main>' from trip headsign",
+            "regex": "<Main>",
+            "ignore_case": true,
+            "replacement": ""
+        },
+        {
+            "regex": "BeaconHill",
+            "is_word": true,
+            "replacement": "Beacon Hill"
+        },
+        {
+            "regex": "EagleRidgeBLVD",
+            "is_word": true,
+            "replacement": "Eagle Ridge Blvd"
+        },
+        {
+            "regex": "CallenDr",
+            "is_word": true,
+            "replacement": "Callen Dr"
+        },
+        {
+            "regex": "HeritageDr",
+            "is_word": true,
+            "replacement": "Heritage Dr"
+        },
+        {
+            "regex":"ParsonsCreek",
+            "is_word": true,
+            "replacement": "Parsons Creek"
+        },
+        {
+            "regex": "RainbowCreek",
+            "is_word": true,
+            "replacement": "Rainbow Creek"
+        },
+        {
+            "regex": "([a-z]+)(\\d+)",
+            "ignore_case": true,
+            "replacement": "$1 $2",
+            "comment": "Add space between letters and numbers"
+        },
+        {
+            "regex": "From(\\w+)",
+            "ignore_case": false,
+            "replacement": "From $1",
+            "comment": "Add space after 'From'"
+        },
+        {
+            "regex": "FaTher",
+            "is_word": true,
+            "replacement": "Father"
+        },
+        {
+            "regex": "Sparrowehawk|SparrowHawk",
+            "is_word": true,
+            "replacement": "Sparrowhawk"
         }
     ],
     "stop_id_cleanup_regex": "^Sto|^0+",
